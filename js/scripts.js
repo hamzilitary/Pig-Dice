@@ -2,6 +2,11 @@ function randomNumber() {
     var randomDie = Math.floor(6*Math.random())+1;
     //turn.face = "dice/" + randomDie + ".jpg";
     return randomDie;
+    if (randomNumber === 1) {
+      roundScore += randomNumber;
+
+    } else {
+      $("button#roll").button('disable');
 };
 
 
@@ -16,6 +21,7 @@ function Die() {
 
   };*/
 };
+}
 $(document).ready(function(){
   //var die1 = new Die();
   //die1.roll();
