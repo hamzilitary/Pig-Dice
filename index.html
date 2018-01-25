@@ -11,19 +11,29 @@
 
   <body>
     <div class="container">
-      <h1>PIG DICE: Don't Get Greedy</h1>
-      <form id="rollBoard">
-        <div class="form-group">
-        <button id="roll">Click to Roll</button>
-        </div>
-        <div class="results">
+      <div class="jumbotron">
+        <h1>PIG DICE: Don't Get Greedy</h1>
+      </div>
 
-        </div>
-      </form>
-    </div>
-    <div class="container">
-      <ul id="rolledNumber">
-      </ul>
+      <div class="well">
+        <div class="row">
+          <div class="col-md-6">
+            Player 1 score
+          </div>
+          <div class="col-md-6">
+            Player 2 score
+          </div>
 
+          <form id="rollBoard">
+            <div class="form-group">
+            <button id="roll">Click to Roll</button>
+            <button id="hold">Click to Hold</button>
+            </div>
+            <div class="results">
+            </div>
+          </form>
+          <h3><ul id="rolledNumber">
+          </ul></h3>
+      </div>
   </body>
 </html>
