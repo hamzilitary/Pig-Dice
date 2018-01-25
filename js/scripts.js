@@ -1,35 +1,32 @@
+
 function randomNumber() {
     var randomDie = Math.floor(6*Math.random())+1;
-    //turn.face = "dice/" + randomDie + ".jpg";
+
     return randomDie;
-    if (randomNumber === 1) {
-      roundScore += randomNumber;
-
-    } else {
-      $("button#roll").button('disable');
 };
+  //for (x = 0;x<generatedRandomNumber)
 
 
-function Die() {
-  /*var turn = this;
-  this.face;
-  this.roll = function () {
-    var randomDie = Math.floor(6*Math.random())+1;
-    turn.face = "dice/" + randomDie + ".jpg";
-    return randomDie;
-
-
-  };*/
-};
-}
+//
+// }
 $(document).ready(function(){
   //var die1 = new Die();
   //die1.roll();
 
   $("button").click(function() {
-    $(".results").html('<img src=img/die'+randomNumber()+'.jpg>');
+    //console.log(randomNumber());
+    var generatedRandomNumber = randomNumber();
+    $("#rolledNumber").append("<li><span class='roundScore'>" + generatedRandomNumber + "</span></li>");
+    $(".results").html('<img src=img/die'+generatedRandomNumber+'.jpg>');
+    if (generatedRandomNumber == 1) {
+      alert("Switch Players")
+    }
+    //randomNumber()
+    var roundScore = roundScore + randomNumber();
     event.preventDefault();
+
     //console.log(die1.face);
   })
 
 })
+//console.log(randomNumber);
