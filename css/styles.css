@@ -3,9 +3,54 @@ h1 {
   font-size: 40px;
 }
 body {
-  background-color: green;
+  background: url("../img/bg.jpg");
 }
 
 .well {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+.btn-lg {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.dice {
+  margin: 0 auto;
+  display: block;
+  height: 180px;
+  width: 180px;
   background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 80px;
+}
+
+.panel {
+  width: 450px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: 0 solid #86682F;
+}
+
+.panel-heading {
+  background-color: #A5080F;
+}
+
+.activeUser {
+  background-color: green;
+}
+
+.panel-body {
+  font-size: 16pt;
 }

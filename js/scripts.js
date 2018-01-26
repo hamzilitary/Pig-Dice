@@ -12,12 +12,12 @@ function Player() {
   this.isActive = isActive;
 }
 
-var pigGame = {
-  player1Score: 0,
-  player2Score: 0,
-  playerUp: 1,
-  turnScore: 0,
-};
+// var pigGame = {
+//   player1Score: 0,
+//   player2Score: 0,
+//   playerUp: 1,
+//   turnScore: 0,
+// };
 
 var randomDie = randomNumber();
 
@@ -66,7 +66,6 @@ var playerRoll = function(player) {
   } else {
     player.turnScore += roll;
   }
-  console.log(player);
   checkForEndOfGame();
   return roll;
 }
@@ -96,24 +95,40 @@ var checkForEndOfGame = function() {
   }
 }
 
+var stylePanels = function() {
+  if (player1.isActive === true) {
+    $("#player2panel").removeClass("activeUser");
+    $("#player1panel").addClass("activeUser");
+  } else {
+    $("#player1panel").removeClass("activeUser");
+    $("#player2panel").addClass("activeUser");
+  }
+}
+
 $(document).ready(function(){
   //var die1 = new Die();
   //die1.roll();
 
   initializeGame();
+  stylePanels();
 
-  console.log(player1, player2);
   $("button#roll").click(function(event) {
     // var generatedRandomNumber = randomNumber();
     //console.log(randomNumber());
-    $("#rolledNumber").append("<li><span class='roundScore'>" + randomDie + "</span></li>");
-    $(".results").html('<img src=img/die'+ randomDie +'.jpg>');
+
+    // $("#rolledNumber").append("<li><span class='roundScore'>" + randomDie + "</span></li>");
+    $(".dice").html('<img src=img/die'+ randomDie +'.png>');
     whichPlayerRoll();
+    stylePanels();
     // if (generatedRandomNumber == 1) {
     //   alert("Switch Players");
     // }
     //randomNumber()
     var roundScore = roundScore + randomNumber();
+    $("#player1Tscore").text(player1.turnScore);
+    $("#player1Gscore").text(player1.gameScore);
+    $("#player2Tscore").text(player2.turnScore);
+    $("#player2Gscore").text(player2.gameScore);
     event.preventDefault();
 
     //console.log(die1.face);
@@ -122,7 +137,7 @@ $(document).ready(function(){
   $("button#hold").click(function(event) {
     event.preventDefault();
     whichPlayerHold();
-    console.log(player1,player2);
+    stylePanels();
   })
 
 })
